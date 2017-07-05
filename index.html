@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+<title>HTML5 Range Slider</title>
+
+<!--  jquery -->
+<link rel="stylesheet" href="style.css">
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<!-- nav script -->
+<script src="../_nav/js/nav.js" type="text/javascript"></script>
+</head>
+
+<body>
+
+<!-- nav script -->
+<div class="demo-meta">
+	<h1 class="demo-title">HTML5 Range Slider</h1>
+	<p class="demo-desc">Styling HTML5 new input element, range slider.</p>
+</div>
+
+<!-- demo content -->
+<div class="demo-wrapper">
+	<input type="range" name="width" min="1" max="100" step="any">
+</div>
+
+
+<script>
+navigator.sayswho = (function(){
+    var ua= navigator.userAgent, tem, 
+    M= ua.match(/(opera|chrome|safari|firefox|msie|trident(?=\/))\/?\s*(\d+)/i) || [];
+    if(/trident/i.test(M[1])){
+        tem=  /\brv[ :]+(\d+)/g.exec(ua) || [];
+        return 'IE '+(tem[1] || '');
+    }
+    if(M[1]=== 'Chrome'){
+        tem= ua.match(/\bOPR\/(\d+)/)
+        if(tem!= null) return 'Opera '+tem[1];
+    }
+    M= M[2]? [M[1], M[2]]: [navigator.appName, navigator.appVersion, '-?'];
+    if((tem= ua.match(/version\/(\d+)/i))!= null) M.splice(1, 1, tem[1]);
+    return M[0];
+})();
+
+var browser = navigator.sayswho.toLowerCase();
+
+(function($) {
+	$('body').addClass(browser);
+})(jQuery);
+</script>
+
+</body>
+</html>
